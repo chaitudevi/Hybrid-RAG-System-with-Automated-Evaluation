@@ -23,8 +23,8 @@ class Generator:
         
         prompt = QA_PROMPT.format(question=query, context=context_text)
         
-        # Determine max length safe for model (512 for T5 usually)
-        # Crude truncation for safety (production would use token counting)
+        # Determine max length safe for model
+        
         if len(prompt) > 2000:
             prompt = prompt[:2000]
             

@@ -34,9 +34,7 @@ def generate_questions():
     # Ensure we cover the "fixed" and "random" sets if possible
     selected_chunks = random.sample(chunks, min(len(chunks), 100))
     
-    # Initialize Generator (we reuse the class but will bypass the specific QA prompt logic by using model directly or modifying class)
-    # Actually, Generator class uses QA_PROMPT in generate(). We'll need access to underlying model or add a generic generate method.
-    # Let's instantiate Generator and use its model/tokenizer directly for QG to keep it clean.
+    # Initialize Generator
     gen_agent = Generator(config_path)
     
     questions = []
@@ -48,7 +46,7 @@ def generate_questions():
         q_type = random.choice(question_types)
         text_snippet = chunk["text"][:1000] # Truncate for prompt limit safety
         
-        # Manually format prompt since Generator.generate() forces QA_PROMPT
+        # Format prompt for QG
         prompt = QG_PROMPT.format(q_type=q_type, text=text_snippet)
         
         # Generate

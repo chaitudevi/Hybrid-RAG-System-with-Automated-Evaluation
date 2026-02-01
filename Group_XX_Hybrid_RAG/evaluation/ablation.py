@@ -56,8 +56,7 @@ class AblationStudy:
             model_answer = "Not enough information"
             if enriched_hits:
                 try:
-                    # If mode is not hybrid, retrieve returns just chunks, generate expects full dicts
-                    # but enriched_hits has text, so it should be fine.
+                    # Handle different return formats from retrievers
                     model_answer = self.generator.generate(query, enriched_hits)
                 except Exception as e:
                     print(f"Error generating answer: {e}")

@@ -104,8 +104,8 @@ def build_corpus():
             html = fetch_url(url)
             if html:
                 text = clean_text(html)
-                # Note: We assume fixed URLs are curated to be >200 words, 
-                # but we could enforce it here too if needed.
+                # fixed URLs are curated to be >200 words, 
+                
                 
                 doc_id = f"doc_fixed_{i:03d}"
                 fixed_documents.append({

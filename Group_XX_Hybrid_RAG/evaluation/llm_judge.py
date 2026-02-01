@@ -15,9 +15,7 @@ class LLMJudge:
         Rate the answer on a scale of 1 to 5 for Factual Correctness.
         Output ONLY the number.
         """
-        
-        # We misuse the text2text generator here for judging
-        # In production, use a separate, stronger model (e.g. GPT-4)
+      
         try:
             rating = self.generator.pipe(prompt)[0]["generated_text"]
             # Extract number

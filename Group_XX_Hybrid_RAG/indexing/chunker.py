@@ -14,7 +14,7 @@ def chunk_text(text, tokenizer, chunk_size, chunk_overlap):
     
     for i in range(0, len(tokens), chunk_size - chunk_overlap):
         chunk_tokens = tokens[i : i + chunk_size]
-        if len(chunk_tokens) < 50: # Skip very small chunks
+        if len(chunk_tokens) < 50:
             continue
             
         chunk_text_str = tokenizer.decode(chunk_tokens)
