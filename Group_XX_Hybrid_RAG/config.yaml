@@ -1,0 +1,10 @@
+embedding_model: sentence-transformers/all-MiniLM-L6-v2
+llm_model: google/flan-t5-base
+
+chunk_size: 300
+chunk_overlap: 50
+
+dense_top_k: 20
+sparse_top_k: 20
+rrf_k: 60
+final_context_n: 5
