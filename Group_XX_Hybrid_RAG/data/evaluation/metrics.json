@@ -1,20 +1,20 @@
 {
   "dense": {
-    "mrr": 0.686721361971362,
-    "recall_at_5": 0.78,
-    "precision_at_5": 0.514,
-    "rouge_l": 0.05296021741223425
+    "mrr": 0.0,
+    "recall_at_5": 0.0,
+    "precision_at_5": 0.0,
+    "rouge_l": 0.018227551030542934
   },
   "sparse": {
-    "mrr": 0.6642904456654456,
-    "recall_at_5": 0.79,
-    "precision_at_5": 0.43599999999999994,
-    "rouge_l": 0.035093742717012225
+    "mrr": 0.0,
+    "recall_at_5": 0.0,
+    "precision_at_5": 0.0,
+    "rouge_l": 0.010151953105524992
   },
   "hybrid": {
-    "mrr": 0.7383333333333333,
-    "recall_at_5": 0.86,
-    "precision_at_5": 0.532,
-    "rouge_l": 0.0481417507883806
+    "mrr": 0.0,
+    "recall_at_5": 0.0,
+    "precision_at_5": 0.0,
+    "rouge_l": 0.010028423098876676
   }
 }
