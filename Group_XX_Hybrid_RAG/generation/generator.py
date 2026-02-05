@@ -23,19 +23,21 @@ class Generator:
         
         prompt = QA_PROMPT.format(question=query, context=context_text)
         
-        # Determine max length safe for model
-        
-        if len(prompt) > 2000:
-            prompt = prompt[:2000]
-            
-        # Tokenize with truncation to ensure we fit in the model's context
+        # Tokenize inputs
         inputs = self.tokenizer(
             prompt, 
             return_tensors="pt", 
             truncation=True, 
             max_length=512
         )
-        outputs = self.model.generate(**inputs, max_new_tokens=100)
+        
+        # Greedy decoding for deterministic results
+        outputs = self.model.generate(
+            **inputs, 
+            max_new_tokens=100,
+            do_sample=False,  # Disable sampling to reduce hallucination
+            temperature=0.0   # Enforce deterministic behavior
+        )
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 if __name__ == "__main__":
